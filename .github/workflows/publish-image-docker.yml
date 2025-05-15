@@ -2,7 +2,9 @@ name: "CI/CD PUBlish image"
 
 on:
 	push:
-    branches: ['main', 'master']
+    tags: 
+    - "[0-9]+.[0-9]+.[0-9]+"
+    - '[0-9]+.[0-9]+.[0-9]+rc[0-9]+'
 
   workflow_dispatch: 
 
@@ -11,9 +13,6 @@ permissions:
   pages: write
   id-token: write 
 
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
 
 jobs:
   build-and-push-image:
