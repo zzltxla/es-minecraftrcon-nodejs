@@ -1,0 +1,37 @@
+services : 
+  app :
+    container_name: minecraft-node
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    tty: true
+    stdin_open: true
+    ports: 
+      - 3000:3000
+    environment: 
+      HOST: 0.0.0.0
+      PORT: 3000
+      RCON_HOST: mc
+      RCON_PORT: 25575
+      RCON_PASSWORD: secret
+    depends_on: 
+      - rcon
+  rcon :
+    image: marctv/minecraft-papermc-server:latest
+    restart: always 
+    container_name: "mcserver"
+    volumes:
+      - minecraftserver:/data
+    build: ./src/rcon
+    tty: true
+    stdin_open: true
+    ports: 
+      - 25575:25575
+    environment: 
+      RCON_HOST: mc
+      RCON_PORT: 25575
+      RCON_PASSWORD: secret
+volumes:
+  minecraftserver:  
+
