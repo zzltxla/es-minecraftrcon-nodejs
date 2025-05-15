@@ -4,12 +4,27 @@ Minecraft RCON API to send raw minecraft nvms commandes via http requests.
 
 ## Quickstart
 
+### Installation
+
 ```sh
 # Installer dependencies
 npm ci
 
 # Start application
 npm run dev
+```
+
+### Build
+
+```sh
+# Installer dependencies
+npm ci
+
+# Build application
+npm run build
+
+# Run application manually
+node build/index.js
 ```
 
 ## Documentation
@@ -42,7 +57,7 @@ GET curretn version of API.
 
 ```json
 {
-  "version": "1.0.0"
+	"version": "1.0.0"
 }
 ```
 
@@ -54,7 +69,7 @@ Send RAW Minecraft nvms command lines using body as `JSON`.
 
 ```json
 {
-  "command": "say hello"
+	"command": "say hello"
 }
 ```
 
@@ -62,6 +77,6 @@ Send RAW Minecraft nvms command lines using body as `JSON`.
 
 ```json
 {
-  "message": "hello"
+	"message": "hello"
 }
 ```
