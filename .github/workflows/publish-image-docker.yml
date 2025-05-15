@@ -2,7 +2,7 @@ name: "CI/CD PUBlish image"
 
 on:
 	push:
-    branch: ['main', 'master']
+    branches: ['main', 'master']
 
 jobs:
   build-and-push-image:
