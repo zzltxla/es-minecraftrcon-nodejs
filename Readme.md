@@ -28,7 +28,7 @@ npm run dev
 
 Verify health of application.
 
-**Response :**
+**Response**
 
 ```sh
 OK
@@ -38,11 +38,11 @@ OK
 
 GET curretn version of API.
 
-**Réponse :**
+**Response**
 
 ```json
 {
-	"version": "1.0.0"
+  "version": "1.0.0"
 }
 ```
 
@@ -50,16 +50,18 @@ GET curretn version of API.
 
 Send RAW Minecraft nvms command lines using body as `JSON`.
 
+**Request**
+
 ```json
 {
-	"command": "say hello"
+  "command": "say hello"
 }
 ```
 
-**Response :**
+**Response**
 
 ```json
 {
-	"message": "hello"
+  "message": "hello"
 }
 ```
